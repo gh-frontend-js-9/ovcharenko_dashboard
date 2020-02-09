@@ -9,9 +9,6 @@ interface Props {
 
 class ProjectLine extends Component<Props> {
 
-        constructor(props) {
-            super(props)
-        }
 
     render() {
             let {project} = this.props;
