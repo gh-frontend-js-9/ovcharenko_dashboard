@@ -1,0 +1,42 @@
+.wrapper-nav  {
+    height: 41px;
+    max-width: 1700px;
+    padding: 15px 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+    background-color: #2f3242;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    font-size: 23px;
+    color: white;
+}
+
+.icon-wrapper {
+    font-size: 23px;
+}
+.icon {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+
+
+.users-avatar {
+    display: flex;
+    flex-direction: row;
+}
+
+.mg-rgt-25px {
+    margin-right: 25px;
+}
