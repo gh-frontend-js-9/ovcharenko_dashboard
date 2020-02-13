@@ -2,6 +2,7 @@
     max-width: 1700px;
     padding: 0 15px;
     margin: 0 auto;
+    margin-left: 74px;
 }
 
 .block-project {
@@ -36,4 +37,34 @@
 }
 .status {
     width: 103px;
+}
+
+@media screen and (max-width: 900px) {
+    .date {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 794px) {
+    .cost {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 743px) {
+    .ava {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .hours {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .status {
+        display: none;
+    }
 }

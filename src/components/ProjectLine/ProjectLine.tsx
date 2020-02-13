@@ -25,10 +25,10 @@ class ProjectLine extends Component<Props> {
                             {project.company}
                         </div>
                     </div>
-                    <div>
+                    <div className='cost'>
                         {project.cost}
                     </div>
-                    <div>
+                    <div className='date'>
                         <div>
                             15 May 2016
                         </div>
@@ -36,7 +36,7 @@ class ProjectLine extends Component<Props> {
                             10 days left
                         </div>
                     </div>
-                    <div>
+                    <div className='hours'>
                         {project.timeSpent + " hours"}
                     </div>
                     <div>
@@ -47,7 +47,7 @@ class ProjectLine extends Component<Props> {
                     </div>
                     <div className='user-porfile'>
                         <div className='user-ava'>
-                            Ava
+                            <img src={'user.png'} alt="" width='50px' className='ava'/>
                         </div>
                         <div>
                             <div>
