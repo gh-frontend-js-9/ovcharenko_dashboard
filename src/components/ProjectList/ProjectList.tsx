@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Project from "../../models/Project";
 import API from "../../service/apiService";
 import ProjectLine from "../ProjectLine/ProjectLine";
-
+import './ProjectList.css'
 
 interface Props {
 
@@ -36,7 +36,7 @@ class ProjectList extends Component<Props,State> {
 
     render() {
         return (
-            <div>
+            <div className='project-list-wrapper'>
                 {
                     this.state.projects.map(project => {
                         return(

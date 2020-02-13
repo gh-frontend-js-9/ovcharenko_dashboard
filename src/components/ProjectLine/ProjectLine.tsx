@@ -14,8 +14,8 @@ class ProjectLine extends Component<Props> {
             let {project} = this.props;
 
             return (
-        <div className='wrapper'>
-            <div className='block-project'>
+            <div className='wrapper'>
+             <div className='block-project'>
                 <div className='box-project'>
                     <div>
                         <div className='title'>
@@ -64,7 +64,8 @@ class ProjectLine extends Component<Props> {
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+
             )
     }
 }

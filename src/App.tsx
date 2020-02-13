@@ -3,6 +3,7 @@ import './App.css';
 import ProjectList from "./components/ProjectList/ProjectList";
 import HeadNavigation from "./components/HeadNavigation/HeadNavigation";
 import SideNavigation from "./components/SideNavigation/SideNavigation";
+import ProjectsInfo from "./components/ProjectsInfo/ProjectsInfo";
 
 const App: React.FC = () =>  {
 
@@ -10,7 +11,8 @@ const App: React.FC = () =>  {
     <div className="App">
         <HeadNavigation/>
         <SideNavigation/>
-      <ProjectList/>
+        <ProjectsInfo/>
+        <ProjectList/>
     </div>
   );
 }
