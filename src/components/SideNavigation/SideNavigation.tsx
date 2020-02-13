@@ -4,6 +4,7 @@ import './SideNavigation.css'
 class SideNavigation extends Component {
     render() {
         return (
+
             <div>
                 <div className='block-nav'>
                     <div className='box-nav'>
