@@ -70,12 +70,14 @@ class LoginForm extends Component<any,any> {
                                handler={this.handleChange}
                     />
                     <FormButton type='submit'>Submit</FormButton>
+                    <div className='login-form-router'>
                     <Link to='/sign-up'>
-                    <a className='rout-sign'>Not a member?</a>
+                    <span className='rout-sign'>Not a member?</span>
                     </Link>
                         <Link to='/reset'>
-                    <a className='rout-reset'>Change password</a>
+                    <span className='rout-reset'>Change password</span>
                         </Link>
+                    </div>
                         </form>
                         </div>
                     </div>

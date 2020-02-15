@@ -76,10 +76,13 @@ class SignUp extends Component<any,any> {
                            handler={this.handleChange}
                     />
                     <FormButton type='submit'>Submit</FormButton>
-                    <Link to='/log-in'>
-                    <a className='rout-login'>
-                        Already have an account?</a>
-                    </Link>
+
+                    <div className='sign-up-form-router'>
+                        <Link to='/log-in'>
+                            <a className='rout-login'>
+                                Already have an account?</a>
+                        </Link>
+                    </div>
                 </form>
             </div>
         );

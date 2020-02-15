@@ -27,3 +27,12 @@
 .rout-login:hover {
     font-weight: bold;
 }
+
+.sign-up-form-router {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+}

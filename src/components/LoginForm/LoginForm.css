@@ -19,22 +19,28 @@ label {
     background-color: #f4f5ff;
 }
 
-.rout-sign {
-    text-align: center;
-    color: white;
+
+
+
+.login-form-router {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     font-size: 20px;
+}
+
+.rout-reset {
+    color: white;
+}
+
+.rout-sign {
+    color: white;
 }
 
 .rout-sign:hover {
     font-weight: bold;
-}
-
-.rout-reset {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
 }
 
 .rout-reset:hover {
