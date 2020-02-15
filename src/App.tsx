@@ -7,6 +7,7 @@ import ProjectsInfo from "./components/ProjectsInfo/ProjectsInfo";
 import SignUp from "./components/SignUp/SignUp";
 import LoginForm from "./components/LoginForm/LoginForm";
 import ResetForm from "./components/ResetForm/ResetForm";
+import Navigation from "./components/Navigation/Navigation";
 
 const App: React.FC = () =>  {
 
@@ -16,9 +17,7 @@ const App: React.FC = () =>  {
         <SideNavigation/>
         <ProjectsInfo/>
         <ProjectList/>*/}
-        <SignUp/>
-        {/*<LoginForm/>
-        {/*<ResetForm/>*/}
+        <Navigation/>
     </div>
   );
 }
