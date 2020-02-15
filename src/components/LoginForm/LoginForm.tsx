@@ -69,6 +69,7 @@ class LoginForm extends Component<any,any> {
                                handler={this.handleChange}
                     />
                     <FormButton type='submit'>Submit</FormButton>
+                    <a href='/sign-up' className='not-member'>Not a member?</a>
                 </form>
                         </div>
                     </div>

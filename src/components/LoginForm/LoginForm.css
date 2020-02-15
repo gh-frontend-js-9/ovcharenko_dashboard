@@ -18,3 +18,14 @@ label {
 .box-login__input {
     background-color: #f4f5ff;
 }
+
+.not-member {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.not-member:hover {
+    font-weight: bold;
+}
