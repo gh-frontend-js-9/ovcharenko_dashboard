@@ -22,6 +22,33 @@ class API {
                 console.log(error)
             })
     }
+    static signUp(signUpBody) {
+        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users', signUpBody)
+            .then(response => {
+                console.log('registr res', response);
+            })
+            .catch(error => {
+                console.log('registr err', error);
+            })
+    }
+    static logIn(logInBody) {
+        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/login', logInBody)
+            .then(response => {
+                console.log('registr res', response);
+            })
+            .catch(error => {
+                console.log('registr err', error);
+            })
+    }
+    static reset(resetBody) {
+        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/reset_password',resetBody)
+            .then(response => {
+                console.log('registr res', response);
+            })
+            .catch(error => {
+                console.log('registr err', error);
+            })
+    }
 }
 
 export default API

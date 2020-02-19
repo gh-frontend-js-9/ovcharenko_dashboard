@@ -4,6 +4,7 @@ import './ResetForm.css'
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
 import { Link } from 'react-router-dom';
+import API from "../../service/apiService";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.post['x-access-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTE5YzIyM2E0MTk5YzAwMjI3NTI2OGEiLCJpYXQiOjE1Nzk2ODc4OTl9.M5q83O_nP6B8SbfNKOs3CaQTu4JaQcbr_MgDLSgqnTU';
 
@@ -28,25 +29,7 @@ class ResetForm  extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        const {
-            email,
-            confirmationPassword,
-            password
-        } = this.state;
-        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/reset_password',
-            {
-                password: password,
-                confirmationPassword: confirmationPassword,
-                email: email
-            },
-
-        )
-            .then(response => {
-                console.log('registr res', response);
-            })
-            .catch(error => {
-                console.log('registr err', error);
-            })
+        API.reset(this.state)
         event.preventDefault();
     }
 

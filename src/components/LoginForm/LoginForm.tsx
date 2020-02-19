@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import './LoginForm.css'
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
 import { Link } from 'react-router-dom';
-axios.defaults.headers.post['Content-Type'] = 'application/json';
-//axios.defaults.headers.post['x-access-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTE5YzIyM2E0MTk5YzAwMjI3NTI2OGEiLCJpYXQiOjE1Nzk2ODc4OTl9.M5q83O_nP6B8SbfNKOs3CaQTu4JaQcbr_MgDLSgqnTU';
+import API from "../../service/apiService";
+
 
 class LoginForm extends Component<any,any> {
     constructor(props) {
@@ -27,23 +26,7 @@ class LoginForm extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        const {
-            email,
-            password,
-        } = this.state;
-        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/login',
-            {
-                email: email,
-                password: password
-            },
-
-        )
-            .then(response => {
-                console.log('registr res', response);
-            })
-            .catch(error => {
-                console.log('registr err', error);
-            })
+        API.logIn(this.state);
         event.preventDefault();
     }
 
