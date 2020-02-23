@@ -1,0 +1,1 @@
+export const BASE_URL: string = 'https://geekhub-frontend-js-9.herokuapp.com/api';

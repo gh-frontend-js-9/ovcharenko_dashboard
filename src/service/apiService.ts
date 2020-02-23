@@ -1,10 +1,11 @@
 import axios from "axios";
+import {BASE_URL} from "../config/config";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.post['x-access-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTE5YzIyM2E0MTk5YzAwMjI3NTI2OGEiLCJpYXQiOjE1Nzk2ODc4OTl9.M5q83O_nP6B8SbfNKOs3CaQTu4JaQcbr_MgDLSgqnTU'
 
 class API {
     static async getProject() {
-        let response = await fetch(`https://geekhub-frontend-js-9.herokuapp.com/api/projects/`, {
+        let response = await fetch(`${BASE_URL}/projects/`, {
             method: 'GET',
             headers: {
                 'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTE5YzIyM2E0MTk5YzAwMjI3NTI2OGEiLCJpYXQiOjE1Nzk2ODc4OTl9.M5q83O_nP6B8SbfNKOs3CaQTu4JaQcbr_MgDLSgqnTU'
@@ -14,7 +15,7 @@ class API {
         return formatedResponce;
     }
     static postProject(body) {
-        return   axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/projects/', body)
+        return   axios.post(`${BASE_URL}/projects/`, body)
             .then(response => {
                 console.log(response)
             })
@@ -23,7 +24,7 @@ class API {
             })
     }
     static signUp(signUpBody) {
-        return axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users', signUpBody)
+        return axios.post(`${BASE_URL}/users`, signUpBody)
             .then(response => {
                 console.log('registr res', response);
             })
@@ -33,7 +34,7 @@ class API {
 
     }
     static logIn(logInBody) {
-      return   axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/login', logInBody)
+      return   axios.post(`${BASE_URL}/users/login`, logInBody)
             .then(response => {
                 console.log('registr res', response);
             })
@@ -42,7 +43,7 @@ class API {
             })
     }
     static reset(resetBody) {
-        return  axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/reset_password',resetBody)
+        return  axios.post(`${BASE_URL}/users/reset_password`,resetBody)
             .then(response => {
                 console.log('registr res', response);
             })
