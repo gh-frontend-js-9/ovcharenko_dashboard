@@ -26,8 +26,6 @@ class ProjectButton extends Component<Props,any> {
         }
     }
 
-
-
     changeHandler = (e) => {
         this.setState({[e.target.name]: e.target.value})
     };

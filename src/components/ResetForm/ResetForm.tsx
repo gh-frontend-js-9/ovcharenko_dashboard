@@ -27,7 +27,7 @@ class ResetForm  extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        API.reset(this.state)
+        API.reset(this.state);
         event.preventDefault();
     }
 
