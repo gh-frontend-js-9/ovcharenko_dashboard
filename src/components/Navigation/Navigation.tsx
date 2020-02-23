@@ -23,11 +23,11 @@ class Navigation extends Component {
                     <Route path={'/reset'}>
                         <ResetForm/>
                     </Route>
-                    <Route path={'/'}>
-                        <Redirect to={'log-in'}/>
-                    </Route>
                     <Route path={'/dashboard'}>
                         <ProjectDashboard/>
+                    </Route>
+                    <Route path={'/'}>
+                        <Redirect to={'log-in'}/>
                     </Route>
                 </Switch>
             </BrowserRouter>
