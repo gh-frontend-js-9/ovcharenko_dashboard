@@ -14,7 +14,7 @@ class API {
         return formatedResponce;
     }
     static postProject(body) {
-        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/projects/', body)
+        return   axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/projects/', body)
             .then(response => {
                 console.log(response)
             })
@@ -23,16 +23,17 @@ class API {
             })
     }
     static signUp(signUpBody) {
-        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users', signUpBody)
+        return axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users', signUpBody)
             .then(response => {
                 console.log('registr res', response);
             })
             .catch(error => {
                 console.log('registr err', error);
             })
+
     }
     static logIn(logInBody) {
-        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/login', logInBody)
+      return   axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/login', logInBody)
             .then(response => {
                 console.log('registr res', response);
             })
@@ -41,7 +42,7 @@ class API {
             })
     }
     static reset(resetBody) {
-        axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/reset_password',resetBody)
+        return  axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/reset_password',resetBody)
             .then(response => {
                 console.log('registr res', response);
             })
