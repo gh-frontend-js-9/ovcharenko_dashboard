@@ -37,7 +37,6 @@ class LoginForm extends Component<any,any> {
     handleSubmit(event) {
         axios.post('https://geekhub-frontend-js-9.herokuapp.com/api/users/login', this.state)
             .then(response => {
-
                 if (response.status === 200) {
                     this.setState({
                         isAuth: true
@@ -53,7 +52,6 @@ class LoginForm extends Component<any,any> {
 
     redirect() {
         if (this.state.isAuth) {
-            console.log(this.state.isAuth);
             return (
                 <Redirect to='/dashboard'/>
             )
