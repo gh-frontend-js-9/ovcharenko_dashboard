@@ -12,9 +12,9 @@ const App: React.FC = () =>  {
 
   return (
      <Provider store={store}>
-    <div className="App">
-        <Navigation/>
-    </div>
+        <div className="App">
+            <Navigation/>
+        </div>
      </Provider>
   );
 };
