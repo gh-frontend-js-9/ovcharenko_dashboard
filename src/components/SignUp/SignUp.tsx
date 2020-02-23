@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import './SignUp.css'
+import { bindActionCreators } from "redux";
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
 import API from "../../service/apiService";
+import {registrationUser} from "../../redux/actions/sign-up";
+import './SignUp.css'
 
 class SignUp extends Component<any,any> {
     constructor(props) {
@@ -68,4 +71,10 @@ class SignUp extends Component<any,any> {
     }
 }
 
-export default SignUp;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        registrationUser: bindActionCreators(registrationUser, dispatch),
+    }
+};
+
+export default connect(null, mapDispatchToProps)(SignUp);
