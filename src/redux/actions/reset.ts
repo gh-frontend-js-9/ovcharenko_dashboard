@@ -27,7 +27,7 @@ export const resetError: ActionCreator<Action> = () => {
     };
 };
 
-export const login: (user: User)
+export const reset: (user: User)
     => (dispatch: Dispatch)
     => void = (user: User) => {
     return (dispatch: Dispatch) => {

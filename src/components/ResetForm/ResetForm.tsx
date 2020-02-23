@@ -4,7 +4,9 @@ import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
 import { Link } from 'react-router-dom';
 import API from "../../service/apiService";
-
+import {bindActionCreators} from "redux";
+import { connect } from "react-redux";
+import { reset } from "../../redux/actions/reset";
 
 class ResetForm  extends Component<any,any> {
     constructor(props) {
@@ -68,4 +70,10 @@ class ResetForm  extends Component<any,any> {
     }
 }
 
-export default ResetForm;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        reset: bindActionCreators(reset, dispatch),
+    }
+};
+
+export default connect(null, mapDispatchToProps)(ResetForm);
