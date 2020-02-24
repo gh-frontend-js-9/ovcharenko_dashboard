@@ -31,7 +31,6 @@ class API {
             .catch(error => {
                 console.log('registr err', error);
             })
-
     }
     static logIn(logInBody) {
       return   axios.post(`${BASE_URL}/users/login`, logInBody)
@@ -41,6 +40,7 @@ class API {
             .catch(error => {
                 console.log('registr err', error);
             })
+
     }
     static reset(resetBody) {
         return  axios.post(`${BASE_URL}/users/reset_password`,resetBody)
