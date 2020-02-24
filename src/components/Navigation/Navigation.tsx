@@ -14,11 +14,11 @@ class Navigation extends Component {
                     {/*Here will be navigation bar*/}
                 </nav>
                 <Switch>
-                    <Route path={'/sign-up'}>
-                        <SignUp/>
-                    </Route>
                     <Route path={'/log-in'}>
                         <LoginForm/>
+                    </Route>
+                    <Route path={'/sign-up'}>
+                        <SignUp/>
                     </Route>
                     <Route path={'/reset'}>
                         <ResetForm/>

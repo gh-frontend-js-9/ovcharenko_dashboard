@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { bindActionCreators } from "redux";
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import API from "../../service/apiService";
 import {registrationUser} from "../../redux/actions/sign-up";
@@ -15,7 +15,8 @@ class SignUp extends Component<any,any> {
         this.state = {
             email: '',
             password: '',
-            name: ''
+            name: '',
+            isSign: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,10 +30,26 @@ class SignUp extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        API.signUp(this.state);
+        API.signUp(this.state)
+            .then(response => {
+                console.log(response);
+             this.setState({
+                 isSign: true
+             })
+            })
+            .catch(error => {
+                console.log('registr err', error)
+            });
         event.preventDefault();
     }
 
+    redirect() {
+        if (this.state.isSign) {
+            return (
+                <Redirect to='/log-in'/>
+            )
+        }
+    }
 
     render() {
         return (

@@ -104,7 +104,8 @@ class LoginForm extends Component<any,any> {
 const mapStateToProps = (state) => {
     return {
         isPending: state.loginReducer.isPending,
-        token: state.loginReducer.token
+        token: state.loginReducer.token,
+        user: state.loginReducer.user
     };
 };
 

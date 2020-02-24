@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './ResetForm.css'
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import API from "../../service/apiService";
 import {bindActionCreators} from "redux";
 import { connect } from "react-redux";
@@ -15,7 +15,8 @@ class ResetForm  extends Component<any,any> {
         this.state = {
             password: '',
             confirmationPassword: '',
-            email: ''
+            email: '',
+            isReset: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,8 +30,25 @@ class ResetForm  extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        API.reset(this.state);
+        API.reset(this.state)
+            .then(response => {
+                console.log(response);
+                this.setState({
+                    isReset: true
+                });
+            })
+            .catch(error => {
+                console.log('registr err', error);
+            });
         event.preventDefault();
+    }
+
+    redirect() {
+        if (this.state.isReset) {
+            return (
+                <Redirect to='/log-in'/>
+            )
+        }
     }
 
 

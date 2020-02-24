@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import './ProjectButton.css';
 import API from "../../service/apiService";
-
+import {bindActionCreators} from "redux";
+import {postProject} from "../../redux/actions/postProject";
+import {connect} from "react-redux";
 
 
 
@@ -115,4 +117,10 @@ class ProjectButton extends Component<Props,any> {
     }
 }
 
-export default ProjectButton;
+const  mapDispatchToProps = (dispatch) => {
+    return {
+        postProject: bindActionCreators(postProject, dispatch)
+    };
+};
+
+export default connect(null, mapDispatchToProps)(ProjectButton);
