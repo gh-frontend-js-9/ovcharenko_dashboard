@@ -13,10 +13,14 @@ export const setLoginPending: ActionCreator<Action> = () => {
     };
 };
 
-export const setLoginSuccess: ActionCreator<Action> = () => {
+export const setLoginSuccess: ActionCreator<Action> = (data) => {
     return {
         type: LOGIN_SUCCESS,
-        payload: false
+        payload: {
+            user: data.response,
+            token: data.token,
+            isPending: false,
+        }
     };
 };
 
@@ -34,7 +38,7 @@ export const login: (user: User)
         dispatch(setLoginPending());
         API.logIn(user)
             .then(success => {
-                console.log(success)
+                console.log(success);
                 dispatch(setLoginSuccess(success));
             })
             .catch(err => {

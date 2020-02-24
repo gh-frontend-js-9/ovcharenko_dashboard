@@ -44,7 +44,7 @@ class LoginForm extends Component<any,any> {
             })
             .catch(error => {
                 console.log('registr err', error);
-            })
+            });
         event.preventDefault();
     }
 
@@ -103,6 +103,7 @@ class LoginForm extends Component<any,any> {
 const mapStateToProps = (state) => {
     return {
         isPending: state.loginReducer.isPending,
+        token: state.loginReducer.token
     };
 };
 
