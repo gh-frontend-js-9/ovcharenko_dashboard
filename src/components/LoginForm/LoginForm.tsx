@@ -43,7 +43,6 @@ class LoginForm extends Component<any,any> {
                 this.setState({
                     isAuth: true
                 });
-                console.log('registr res', response);
             })
             .catch(error => {
                 console.log('registr err', error);
