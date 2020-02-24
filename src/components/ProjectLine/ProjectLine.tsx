@@ -11,7 +11,11 @@ class ProjectLine extends Component<Props> {
 
 
     render() {
+
             let {project} = this.props;
+        let dateFormat = require('dateformat');
+        let now = Date.now();
+        let deadline = Math.floor((Date.parse(project.deadline) - Date.now())/86400000);
 
             return (
             <div className='wrapper'>
@@ -21,7 +25,7 @@ class ProjectLine extends Component<Props> {
                         <div className='title'>
                             {project.title}
                         </div>
-                        <div>
+                        <div> 
                             {project.company}
                         </div>
                     </div>
@@ -30,10 +34,12 @@ class ProjectLine extends Component<Props> {
                     </div>
                     <div className='date'>
                         <div>
-                            15 May 2016
+                            {
+                                dateFormat(project.deadline, "d mmmm yyyy")
+                            }
                         </div>
                         <div>
-                            10 days left
+                            {deadline} days left
                         </div>
                     </div>
                     <div className='hours'>
