@@ -38,6 +38,7 @@ class LoginForm extends Component<any,any> {
     handleSubmit(event) {
         API.logIn(this.state)
             .then(response => {
+                console.log(response);
                 this.setState({
                     isAuth: true
                 });

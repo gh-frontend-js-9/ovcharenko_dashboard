@@ -36,10 +36,13 @@ class API {
       return   axios.post(`${BASE_URL}/users/login`, logInBody)
             .then(response => {
                 let token = response.headers['x-auth-token'];
+                axios.defaults.headers.post['x-auth-token'] = token;
+                console.log(axios.defaults.headers.post['x-auth-token'])
                 return {
                     token: token,
                     response: response
                 }
+
             })
             .catch(error => {
                 console.log('registr err', error);
