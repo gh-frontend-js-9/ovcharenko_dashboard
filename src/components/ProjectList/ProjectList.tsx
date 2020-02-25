@@ -3,6 +3,10 @@ import Project from "../../models/Project";
 import API from "../../service/apiService";
 import ProjectLine from "../ProjectLine/ProjectLine";
 import './ProjectList.css'
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import {getProject} from "../../redux/actions/getProject";
+
 
 interface Props {
 
@@ -49,4 +53,10 @@ class ProjectList extends Component<Props,State> {
     }
 }
 
-export default ProjectList;
+const  mapDispatchToProps = (dispatch) => {
+    return {
+        getProject: bindActionCreators(getProject, dispatch)
+    };
+};
+
+export default connect(null, mapDispatchToProps)(ProjectList);
