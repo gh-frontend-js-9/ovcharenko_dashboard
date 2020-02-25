@@ -11,14 +11,12 @@ import { reset } from "../../redux/actions/reset";
 class ResetForm  extends Component<any,any> {
     constructor(props) {
         super(props);
-
         this.state = {
             password: '',
             confirmationPassword: '',
             email: '',
             isReset: false
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }

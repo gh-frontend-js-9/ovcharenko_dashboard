@@ -28,7 +28,7 @@ class ProjectList extends Component<Props,State> {
                     projects: response,
                 })
             })
-    }
+    };
 
     componentDidMount(): void {
         this.updateProjects()
