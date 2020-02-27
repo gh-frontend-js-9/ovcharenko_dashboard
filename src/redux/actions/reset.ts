@@ -27,12 +27,12 @@ export const resetError: ActionCreator<Action> = () => {
     };
 };
 
-export const reset: (user: User)
+export const resetPassword: (user: User)
     => (dispatch: Dispatch)
     => void = (user: User) => {
     return (dispatch: Dispatch) => {
         dispatch(resetPending());
-        API.reset(user)
+        API.resetPassword(user)
             .then(success => {
                 console.log(success)
                 dispatch(resetSuccess(success));

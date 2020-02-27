@@ -6,7 +6,6 @@ import {
 
 import { LoginState } from "./types/LoginState";
 import { Reducer } from "redux";
-import {act} from "react-dom/test-utils";
 
 const initialState: LoginState = {
     isPending: false,

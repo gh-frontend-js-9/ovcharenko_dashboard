@@ -48,7 +48,7 @@ class API {
             })
 
     }
-    static reset(resetBody) {
+    static resetPassword(resetBody) {
         return  axios.post(`${BASE_URL}/users/reset_password`,resetBody)
             .then(response => {
                 console.log('registr res', response);

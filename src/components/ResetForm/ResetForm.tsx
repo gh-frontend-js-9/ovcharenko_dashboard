@@ -3,10 +3,9 @@ import './ResetForm.css'
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
 import { Link, Redirect } from 'react-router-dom';
-import API from "../../service/apiService";
 import {bindActionCreators} from "redux";
 import { connect } from "react-redux";
-import { reset } from "../../redux/actions/reset";
+import { resetPassword } from "../../redux/actions/reset";
 
 class ResetForm  extends Component<any,any> {
     constructor(props) {
@@ -28,21 +27,12 @@ class ResetForm  extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        API.reset(this.state)
-            .then(response => {
-                console.log(response);
-                this.setState({
-                    isReset: true
-                });
-            })
-            .catch(error => {
-                console.log('registr err', error);
-            });
+        this.props.resetPass(this.state);
         event.preventDefault();
     }
 
     redirect() {
-        if (this.state.isReset) {
+        if (Object.keys(this.props.resetPass).length) {
             return (
                 <Redirect to='/log-in'/>
             )
@@ -88,7 +78,7 @@ class ResetForm  extends Component<any,any> {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        reset: bindActionCreators(reset, dispatch),
+        resetPass: bindActionCreators(resetPassword, dispatch),
     }
 };
 

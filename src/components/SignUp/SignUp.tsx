@@ -4,7 +4,6 @@ import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
-import API from "../../service/apiService";
 import {registrationUser} from "../../redux/actions/sign-up";
 import './SignUp.css'
 
@@ -16,7 +15,6 @@ class SignUp extends Component<any,any> {
             email: '',
             password: '',
             name: '',
-            isSign: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,21 +28,12 @@ class SignUp extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        API.signUp(this.state)
-            .then(response => {
-                console.log(response);
-             this.setState({
-                 isSign: true
-             })
-            })
-            .catch(error => {
-                console.log('registr err', error)
-            });
+        this.props.registrationUser(this.state);
         event.preventDefault();
     }
 
     redirect() {
-        if (this.state.isSign) {
+        if (Object.keys(this.props.registrationUser).length) {
             return (
                 <Redirect to='/log-in'/>
             )
