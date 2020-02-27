@@ -13,10 +13,12 @@ export const resetPending: ActionCreator<Action> = () => {
     };
 };
 
-export const resetSuccess: ActionCreator<Action> = () => {
+export const resetSuccess: ActionCreator<Action> = (message) => {
     return {
         type: RESET_SUCCESS,
-        payload: false
+        payload: {
+            message: message
+        }
     };
 };
 

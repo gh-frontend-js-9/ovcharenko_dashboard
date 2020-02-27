@@ -8,7 +8,8 @@ import {ResetState} from "./types/ResetState";
 import {RegisterActions } from "../actions/types/RegistrationAction";
 
 const initialState: ResetState = {
-    isPending: false
+    isPending: false,
+    message: ''
 };
 
 export const reset: Reducer<ResetState, any> = (state= initialState, action) => {
@@ -26,7 +27,8 @@ export const reset: Reducer<ResetState, any> = (state= initialState, action) => 
         case RESET_SUCCESS:
             return {
                 ...state,
-                isPending: action.payload
+                isPending: action.payload,
+                message: action.payload.anotherPassword.data
             };
         default:
             return state;

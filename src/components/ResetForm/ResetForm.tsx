@@ -31,7 +31,7 @@ class ResetForm  extends Component<any,any> {
     }
 
     redirect() {
-        if (Object.keys(this.props.resetPass).length) {
+        if (this.props.message) {
             return (
                 <Redirect to='log-in'/>
             )
@@ -76,10 +76,16 @@ class ResetForm  extends Component<any,any> {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        message: state.reset.message
+    };
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
         resetPass: bindActionCreators(resetPassword, dispatch),
     }
 };
 
-export default connect(null, mapDispatchToProps)(ResetForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ResetForm);

@@ -52,7 +52,9 @@ class API {
     static resetPassword(resetBody) {
         return  axios.post(`${BASE_URL}/users/reset_password`,resetBody)
             .then(response => {
-                console.log('registr res', response);
+                return {
+                    anotherPassword: response
+                }
             })
             .catch(error => {
                 console.log('registr err', error);
