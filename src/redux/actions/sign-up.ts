@@ -13,10 +13,12 @@ const register: ActionCreator<Action> = () => {
     }
 };
 
-const registerSuccess: ActionCreator<Action> = () => {
+const registerSuccess: ActionCreator<Action> = (user:User) => {
     return {
         type: REGISTER_SUCCESS,
-        payload: false,
+        payload: {
+            registerUser: user
+        }
     }
 };
 
@@ -33,8 +35,9 @@ export const registrationUser: (user: User)
     return (dispatch: Dispatch) => {
         dispatch(register());
         API.signUp(user)
-            .then(() => {
-                dispatch(registerSuccess());
+            .then((user) => {
+                console.log(user);
+                dispatch(registerSuccess(user));
             })
             .catch(err => {
                 dispatch(registerError());

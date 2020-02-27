@@ -5,13 +5,14 @@ import {
 } from "../actions/sign-up";
 import {Reducer} from "redux";
 import {RegisterState} from "./types/RegistrationState";
-import {RegisterActions } from "../actions/types/RegistrationAction";
+import { RegisterActions } from "../actions/types/RegistrationAction";
 
 const initialState: RegisterState = {
-    registrationIsPending: false
+    registrationIsPending: false,
+    registerUser: {}
 };
 
-export const signUp: Reducer<RegisterState, RegisterActions> = (state=initialState, action) => {
+export const signUp: Reducer<RegisterState, any> = (state= initialState, action) => {
     switch (action.type) {
         case REGISTER_PENDING:
             return {
@@ -26,7 +27,8 @@ export const signUp: Reducer<RegisterState, RegisterActions> = (state=initialSta
         case REGISTER_SUCCESS:
             return {
                 ...state,
-                registrationIsPending: action.payload
+                registrationIsPending: false,
+                registerUser: action.payload.registerUser.registerUser.data
             };
         default:
             return state;

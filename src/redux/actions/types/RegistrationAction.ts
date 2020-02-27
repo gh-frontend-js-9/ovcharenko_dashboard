@@ -1,18 +1,14 @@
-export interface IRegister {
-    type: string;
-    payload: boolean;
-}
+import {User} from "../../../models/User";
+
+
 
 export interface IRegisterSuccess {
     type: string;
-    payload: boolean;
+    payload: {
+        registerUser: User
+    };
 }
 
-export interface IRegisterError {
-    type: string;
-    payload: boolean;
-}
 
-export type RegisterActions = IRegister
-    | IRegisterSuccess
-    | IRegisterError;
+
+export type RegisterActions =IRegisterSuccess

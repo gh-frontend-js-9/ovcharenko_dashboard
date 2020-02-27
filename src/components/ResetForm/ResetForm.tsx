@@ -33,7 +33,7 @@ class ResetForm  extends Component<any,any> {
     redirect() {
         if (Object.keys(this.props.resetPass).length) {
             return (
-                <Redirect to='/log-in'/>
+                <Redirect to='log-in'/>
             )
         }
     }
@@ -42,6 +42,7 @@ class ResetForm  extends Component<any,any> {
     render() {
         return (
             <div className={'reset-wrapper'}>
+                {this.redirect()}
                 <form onSubmit={this.handleSubmit}
                       className={'reset card'}
                 >
@@ -65,7 +66,7 @@ class ResetForm  extends Component<any,any> {
                     />
                     <FormButton type='submit'>Submit</FormButton>
                     <div className='reset-form-router'>
-                        <Link to='/sign-up'>
+                        <Link to='/log-in'>
                             <span className='rout-sign'>Login</span>
                         </Link>
                     </div>

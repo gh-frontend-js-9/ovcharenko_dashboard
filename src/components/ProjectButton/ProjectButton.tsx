@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './ProjectButton.css';
-import API from "../../service/apiService";
 import {bindActionCreators} from "redux";
 import {postProject} from "../../redux/actions/postProject";
 import {connect} from "react-redux";

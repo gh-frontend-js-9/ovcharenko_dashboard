@@ -11,7 +11,7 @@ const initialState: ResetState = {
     isPending: false
 };
 
-export const reset: Reducer<ResetState, RegisterActions> = (state= initialState, action) => {
+export const reset: Reducer<ResetState, any> = (state= initialState, action) => {
     switch (action.type) {
         case RESET_PENDING:
             return {

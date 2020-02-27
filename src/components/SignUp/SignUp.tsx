@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import {registrationUser} from "../../redux/actions/sign-up";
 import './SignUp.css'
 
+
 class SignUp extends Component<any,any> {
     constructor(props) {
         super(props);
@@ -33,9 +34,9 @@ class SignUp extends Component<any,any> {
     }
 
     redirect() {
-        if (Object.keys(this.props.registrationUser).length) {
+        if (Object.keys(this.props.registerUser).length) {
             return (
-                <Redirect to='/log-in'/>
+                <Redirect to='log-in'/>
             )
         }
     }
@@ -43,6 +44,7 @@ class SignUp extends Component<any,any> {
     render() {
         return (
             <div className={'sign-up-wrapper'}>
+                {this.redirect()}
                 <form onSubmit={this.handleSubmit}
                       className={'sign-up-form card'}
                 >
@@ -76,6 +78,11 @@ class SignUp extends Component<any,any> {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        registerUser: state.signUp.registerUser
+    };
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -83,4 +90,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

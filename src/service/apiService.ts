@@ -24,9 +24,11 @@ class API {
             })
     }
     static signUp(signUpBody) {
-        return axios.post(`${BASE_URL}/users`, signUpBody)
+        return axios.post(`${BASE_URL}/users/`, signUpBody)
             .then(response => {
-                console.log('registr res', response);
+                return {
+                    registerUser: response
+                }
             })
             .catch(error => {
                 console.log('registr err', error);
