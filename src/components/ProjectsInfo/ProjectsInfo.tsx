@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import './ProjectsInfo.css'
-
 class ProjectsInfo extends Component {
     render() {
         return (
             <div className='projects-info'>
                 <div className='info'>
                     <div className='mg-rgt-20px'>
-                        All Projects (358)
+                        All Projects (30)
                     </div>
                     <div>
                         Workflow

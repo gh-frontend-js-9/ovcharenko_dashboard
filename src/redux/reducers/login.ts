@@ -6,10 +6,12 @@ import {
 
 import { LoginState } from "./types/LoginState";
 import { Reducer } from "redux";
+import {act} from "react-dom/test-utils";
 
 const initialState: LoginState = {
     isPending: false,
     user: {},
+    token: ''
 };
 
 export const loginReducer: Reducer<LoginState> = (state = initialState, action) => {
@@ -17,7 +19,9 @@ export const loginReducer: Reducer<LoginState> = (state = initialState, action) 
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                isPending: action.payload.isPending,
+                isPending: false,
+                user: action.payload.user,
+                token: action.payload.token
             };
         case LOGIN_PENDING:
             return {

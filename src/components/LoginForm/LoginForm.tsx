@@ -6,13 +6,11 @@ import {connect} from "react-redux";
 import { login } from "../../redux/actions/login";
 import { bindActionCreators} from "redux";
 import './LoginForm.css'
-import API from "../../service/apiService";
 
 
 interface State {
     email: string,
     password: string,
-    isAuth?: boolean
 }
 
 class LoginForm extends Component<any,any> {
@@ -22,7 +20,6 @@ class LoginForm extends Component<any,any> {
         this.state = {
             email: '',
             password: '',
-            isAuth: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,30 +33,19 @@ class LoginForm extends Component<any,any> {
     }
 
     handleSubmit(event) {
-        API.logIn(this.state)
-            .then(response => {
-                console.log(response);
-                this.setState({
-                    isAuth: true
-                });
-            })
-            .catch(error => {
-                console.log('registr err', error);
-            });
+       this.props.login(this.state);
         event.preventDefault();
     }
 
     redirect() {
-        if (this.state.isAuth) {
+        if (Object.keys(this.props.user).length) {
             return (
                 <Redirect to='/dashboard'/>
             )
         }
     }
     render() {
-
         return (
-
             <div className='login'>
                 {this.redirect()}
                 <div className='wrapper'>

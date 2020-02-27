@@ -70,7 +70,6 @@ class ProjectLine extends Component<Props> {
                 </div>
             </div>
             </div>
-
             )
     }
 }
