@@ -41,7 +41,6 @@ class API {
                     token: token,
                     response: response
                 }
-
             })
             .catch(error => {
                 console.log('registr err', error);

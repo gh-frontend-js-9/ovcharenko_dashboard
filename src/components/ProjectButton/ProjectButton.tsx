@@ -9,6 +9,7 @@ import {connect} from "react-redux";
 
 interface Props {
     update: () => void;
+    postProject: (Project) => void
 }
 
 interface State {
@@ -34,7 +35,7 @@ class ProjectButton extends Component<Props,any> {
 
     submitHandler = async (e) => {
         e.preventDefault();
-        await API.postProject(this.state);
+        this.props.postProject(this.state);
         await this.props.update();
         this.setState({isOpen:false});
     };

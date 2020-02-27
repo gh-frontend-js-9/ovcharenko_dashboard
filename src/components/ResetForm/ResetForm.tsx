@@ -14,7 +14,6 @@ class ResetForm  extends Component<any,any> {
             password: '',
             confirmationPassword: '',
             email: '',
-            isReset: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
