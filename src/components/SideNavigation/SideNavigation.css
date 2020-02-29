@@ -20,3 +20,8 @@
     background-color: white;
     color: #2f3242;
 }
+
+.side-bar__link {
+    color: #757da4;
+    text-decoration: none;
+}
