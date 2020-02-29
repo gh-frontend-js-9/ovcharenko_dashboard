@@ -28,7 +28,7 @@ export const reset: Reducer<ResetState, any> = (state= initialState, action) => 
             return {
                 ...state,
                 isPending: action.payload,
-                message: action.payload.anotherPassword.data
+                message: action.payload.anotherPassword.message.data
             };
         default:
             return state;
