@@ -60,6 +60,17 @@ class API {
                 console.log('registr err', error);
             })
     }
+    static createThread(user_id) {
+        return axios.post(`${BASE_URL}/threads`,user_id)
+            .then(response => {
+                return {
+                    thread: response
+                }
+            })
+            .catch(error => {
+                console.log('thread err', error);
+            })
+    }
 }
 
 export default API
