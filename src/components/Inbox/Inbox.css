@@ -1,0 +1,31 @@
+.inbox-message {
+    background-color: #333544;
+    width: 45vw;
+    height: 90vh;
+}
+.message-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.inbox-body-message {
+    height: 80vh;
+}
+
+.enter-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.input-body {
+    width: 40vw;
+    border-radius: 10px;
+    border: 1px solid rgba(156, 161, 178, 0.3);
+    background-color: #404359;
+    height: 40px;
+    padding: 0px 15px;
+    color: #9ca1b2;
+}
+
