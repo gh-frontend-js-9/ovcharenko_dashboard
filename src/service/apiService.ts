@@ -40,6 +40,7 @@ class API {
             .then(response => {
                 let token = response.headers['x-auth-token'];
                 axios.defaults.headers.post['x-auth-token'] = token;
+                sessionStorage.setItem('token',token);
                 return {
                     token: token,
                     response: response
@@ -72,8 +73,12 @@ class API {
                 console.log('thread err', error);
             })
     }
-    static getAllThread() {
-        return axios.get(`${BASE_URL}/threads?sort=desc`)
+    static getAllThread(token) {
+        return axios.get(`${BASE_URL}/threads?sort=desc`,{
+            headers: {
+                'x-access-token': token,
+            }
+        })
             .then(response => {
                 return {
                     allThread: response

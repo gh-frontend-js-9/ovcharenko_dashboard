@@ -1,7 +1,30 @@
 import React, {Component} from 'react';
 import './InboxThread.css'
+import API from "../../service/apiService";
+
 class InboxThread extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            threads: []
+        }
+    }
+
+    updateTreads = () => {
+        API.getAllThread(sessionStorage.getItem('token'))
+            .then((response) => {
+                this.setState({
+                    threads: response,
+                })
+            })
+    };
+
+    componentDidMount(): void {
+        this.updateTreads()
+    }
+
     render() {
+
         return (
             <div>
                 <div className='thread-block'>
