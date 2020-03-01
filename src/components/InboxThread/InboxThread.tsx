@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './InboxThread.css'
-import API from "../../service/apiService";
+
 
 class InboxThread extends Component<any,any> {
 

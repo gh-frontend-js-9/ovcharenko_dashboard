@@ -28,7 +28,7 @@ class InboxThreadList extends Component<any,any> {
             <div>
                 {this.state.threads.map(thread => {
                     return(
-                        <InboxThread thread={thread}/>
+                        <InboxThread threads={thread}/>
                     )
                 })}
             </div>

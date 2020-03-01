@@ -3,8 +3,9 @@ import './Inbox.css'
 import HeadNavigation from "../HeadNavigation/HeadNavigation";
 import SideNavigation from "../SideNavigation/SideNavigation";
 import InboxInfo from "../InboxInfo/InboxInfo";
-import InboxThread from "../InboxThread/InboxThread";
+
 import InboxMessage from "../InboxMessage/InboxMessage";
+import InboxThreadList from "../InboxThreadList/InboxThreadList";
 
 class Inbox extends Component {
     render() {
@@ -14,7 +15,7 @@ class Inbox extends Component {
                 <SideNavigation/>
                 <InboxInfo/>
                 <div className='message-flex'>
-                    <InboxThread/>
+                    <InboxThreadList/>
                     <InboxMessage/>
                 </div>
             </div>
