@@ -1,5 +1,7 @@
 import axios from "axios";
 import {BASE_URL} from "../config/config";
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.post['x-access-token'] = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTE5YzIyM2E0MTk5YzAwMjI3NTI2OGEiLCJpYXQiOjE1Nzk2ODc4OTl9.M5q83O_nP6B8SbfNKOs3CaQTu4JaQcbr_MgDLSgqnTU'
 
@@ -69,6 +71,19 @@ class API {
             })
             .catch(error => {
                 console.log('thread err', error);
+            })
+    }
+    static getThread() {
+        return axios.get(`${BASE_URL}/threads?sort=desc`)
+            .then(response => {
+                return {
+                    allThread: response
+                }
+            })
+            .catch(error => {
+                console.log(error => {
+                    console.log('getThread err',error)
+                })
             })
     }
 }
