@@ -2,28 +2,13 @@ import React, {Component} from 'react';
 import './InboxThread.css'
 import API from "../../service/apiService";
 
-class InboxThread extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            threads: []
-        }
-    }
+class InboxThread extends Component<any,any> {
 
-    updateTreads = () => {
-        API.getAllThread(sessionStorage.getItem('token'))
-            .then((response) => {
-                this.setState({
-                    threads: response,
-                })
-            })
-    };
 
-    componentDidMount(): void {
-        this.updateTreads()
-    }
 
     render() {
+
+        let {thread} = this.props;
 
         return (
             <div>
