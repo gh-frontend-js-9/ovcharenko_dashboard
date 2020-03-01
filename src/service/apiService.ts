@@ -73,7 +73,7 @@ class API {
                 console.log('thread err', error);
             })
     }
-    static getThread() {
+    static getAllThread() {
         return axios.get(`${BASE_URL}/threads?sort=desc`)
             .then(response => {
                 return {
@@ -81,9 +81,18 @@ class API {
                 }
             })
             .catch(error => {
-                console.log(error => {
-                    console.log('getThread err',error)
-                })
+                console.log('err', error);
+            })
+    }
+    static allMessageInThread(thread_id) {
+        return axios.get(`${BASE_URL}/threads/messages/${thread_id}?sort=desc`)
+            .then(response => {
+                return {
+                    messageInThread: response
+                }
+            })
+            .catch(error => {
+                console.log('err', error);
             })
     }
 }
