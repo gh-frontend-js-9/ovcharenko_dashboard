@@ -26,12 +26,22 @@ class InboxThreadList extends Component<any,any> {
     render() {
         return (
             <div>
+                <div className='thread-block'>
+                    <div className='wrapper-threads'>
                 {this.state.threads.map(thread => {
                     return(
                         <InboxThread threads={thread}/>
                     )
                 })}
+                </div>
+                <div className='box-new-convers'>
+                    <button className='new-conv-button'>
+                        + New coversation
+                    </button>
+                </div>
+                </div>
             </div>
+
         );
     }
 }

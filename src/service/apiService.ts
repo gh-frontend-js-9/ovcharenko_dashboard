@@ -41,6 +41,7 @@ class API {
                 let token = response.headers['x-auth-token'];
                 axios.defaults.headers.post['x-auth-token'] = token;
                 sessionStorage.setItem('token',token);
+
                 return {
                     token: token,
                     response: response
@@ -80,9 +81,8 @@ class API {
             }
         })
             .then(response => {
-                return {
-                    allThread: response
-                }
+                return response.data
+
             })
             .catch(error => {
                 console.log('err', error);

@@ -1,0 +1,34 @@
+.thread-block {
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.3);
+    background-color: #2b2d3c;
+    height: 90vh;
+    width: 30vw;
+    margin-left: 83px;
+}
+.wrapper-threads {
+    height: 80vh;
+    overflow:scroll;
+}
+
+.box-new-convers {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-conv-button {
+    height: 50px;
+    width: 25vw;
+    border-radius: 7px;
+    background-color: #2196f3;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.24px;
+}
+
+.new-conv-button:hover {
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
