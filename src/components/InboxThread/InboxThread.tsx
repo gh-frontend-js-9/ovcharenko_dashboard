@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './InboxThread.css'
 import {connect} from "react-redux";
+import API from "../../service/apiService";
 
 
 class InboxThread extends Component<any,any> {
@@ -10,7 +11,15 @@ class InboxThread extends Component<any,any> {
         let dateFormat = require('dateformat');
         return (
             <div>
-                <div className='thread-box'>
+                <div className='thread-box' onClick={() => {
+                    API.allMessageInThread(threads._id,sessionStorage.getItem('token'))
+                        .then(response => {
+                            console.log(response)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+                }}>
                             <div className='name_date'>
                             <div className='name-message'>
                                 {
@@ -20,7 +29,7 @@ class InboxThread extends Component<any,any> {
                             </div>
                             <div className='date-message'>
                                 {
-                                    dateFormat(threads.created_at, "d mmmm yyyy")
+                                    dateFormat(threads.created_at, "d mmmm hh:mm")
                                 }
                             </div>
                             </div>

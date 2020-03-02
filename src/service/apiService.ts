@@ -88,12 +88,15 @@ class API {
                 console.log('err', error);
             })
     }
-    static allMessageInThread(thread_id) {
-        return axios.get(`${BASE_URL}/threads/messages/${thread_id}?sort=desc`)
+    static allMessageInThread(thread_id,token) {
+        return axios.get(`${BASE_URL}/threads/messages/${thread_id}?sort=desc`,{
+            headers: {
+                'x-access-token': token,
+            }
+        })
             .then(response => {
-                return {
-                    messageInThread: response
-                }
+                return response
+
             })
             .catch(error => {
                 console.log('err', error);
