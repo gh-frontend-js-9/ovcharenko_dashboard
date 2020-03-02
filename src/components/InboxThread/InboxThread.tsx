@@ -7,6 +7,7 @@ class InboxThread extends Component<any,any> {
 
     render() {
         let {threads} = this.props;
+        let dateFormat = require('dateformat');
         return (
             <div>
                 <div className='thread-box'>
@@ -18,8 +19,9 @@ class InboxThread extends Component<any,any> {
                                 }
                             </div>
                             <div className='date-message'>
-                                02.02.2020
-
+                                {
+                                    dateFormat(threads.created_at, "d mmmm yyyy")
+                                }
                             </div>
                             </div>
                             <div className='last-message'>
