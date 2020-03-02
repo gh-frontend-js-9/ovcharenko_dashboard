@@ -34,6 +34,7 @@ class LoginForm extends Component<any,any> {
 
     handleSubmit(event) {
        this.props.login(this.state);
+
         event.preventDefault();
     }
 

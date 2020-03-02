@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './InboxThread.css'
+import {connect} from "react-redux";
 
 
 class InboxThread extends Component<any,any> {
@@ -15,7 +16,11 @@ class InboxThread extends Component<any,any> {
                 <div className='thread-box'>
                             <div className='name_date'>
                             <div className='name-message'>
-                                {threads.users[0].name}
+                                {/*{threads.users[0].name}*/}
+                                {
+                                    this.props.user._id === threads.users[0]._id ?
+                                        threads.users[1].name : threads.users[0].name
+                                }
                             </div>
                             <div className='date-message'>
                                 02.02.2020
@@ -30,4 +35,10 @@ class InboxThread extends Component<any,any> {
     }
 }
 
-export default InboxThread;
+const mapStateToProps = (state) => {
+    return {
+        user: state.loginReducer.user
+    };
+};
+
+export default  connect(mapStateToProps)(InboxThread);

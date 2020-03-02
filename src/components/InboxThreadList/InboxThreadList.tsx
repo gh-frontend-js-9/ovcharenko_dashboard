@@ -30,7 +30,7 @@ class InboxThreadList extends Component<any,any> {
                     <div className='wrapper-threads'>
                 {this.state.threads.map(thread => {
                     return(
-                        <InboxThread threads={thread}/>
+                        <InboxThread threads={thread} key={thread._id}/>
                     )
                 })}
                 </div>

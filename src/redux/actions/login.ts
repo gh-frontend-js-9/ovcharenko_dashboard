@@ -17,7 +17,7 @@ export const setLoginSuccess: ActionCreator<Action> = (data) => {
     return {
         type: LOGIN_SUCCESS,
         payload: {
-            user: data.response,
+            user: data.response.data,
             token: data.token,
             isPending: false,
         }
