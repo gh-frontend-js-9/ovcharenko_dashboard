@@ -34,6 +34,6 @@
     align-self: flex-end;
 }
 
-button {
+.button-input-message {
     display: none;
 }

@@ -47,7 +47,7 @@ class InboxMessage extends Component<any,any> {
                                placeholder='Write a message'
                                onChange={this.handleChange}
                         />
-                        <button type='submit'></button>
+                        <button type='submit' className='button-input-message'></button>
                     </form>
                 </div>
             </div>
