@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import './InboxThread.css'
 import {connect} from "react-redux";
 import API from "../../service/apiService";
+import {bindActionCreators} from "redux";
+import {registrationUser} from "../../redux/actions/sign-up";
+import {getMessage} from "../../redux/actions/getMessage";
 
 
 class InboxThread extends Component<any,any> {
@@ -12,14 +15,7 @@ class InboxThread extends Component<any,any> {
         return (
             <div>
                 <div className='thread-box' onClick={() => {
-                    console.log(threads.users[0].name)
-                    API.allMessageInThread(threads._id,sessionStorage.getItem('token'))
-                        .then(response => {
-                            console.log(response)
-                        })
-                        .catch(error => {
-                            console.log(error)
-                        })
+                  this.props.getMessage(threads._id)
                 }}>
                             <div className='name_date'>
                             <div className='name-message'>
@@ -45,8 +41,14 @@ class InboxThread extends Component<any,any> {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.loginReducer.user
+        user: state.loginReducer.user,
     };
 };
 
-export default  connect(mapStateToProps)(InboxThread);
+const mapDispatchToProps = (dispatch) => {
+    return {
+     getMessage : bindActionCreators(getMessage, dispatch),
+    }
+};
+
+export default  connect(mapStateToProps,mapDispatchToProps)(InboxThread);

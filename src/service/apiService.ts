@@ -82,7 +82,6 @@ class API {
         })
             .then(response => {
                 return response.data
-
             })
             .catch(error => {
                 console.log('err', error);
@@ -95,8 +94,7 @@ class API {
             }
         })
             .then(response => {
-                return response
-
+                return response.data
             })
             .catch(error => {
                 console.log('err', error);

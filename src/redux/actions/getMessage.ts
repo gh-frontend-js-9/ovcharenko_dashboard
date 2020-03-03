@@ -12,11 +12,11 @@ export const messagePending: ActionCreator<Action> = () => {
     };
 };
 
-export const messageSuccess: ActionCreator<Action> = (data) => {
+export const messageSuccess: ActionCreator<Action> = (messages) => {
     return {
         type: MESSAGE_SUCCESS,
         payload: {
-            threadId: data,
+            messages: messages,
             isPending: false,
         }
     };
@@ -33,7 +33,7 @@ export const getMessage: (id)
     => (dispatch: Dispatch)
     => void = (id) => {
     return (dispatch: Dispatch) => {
-        dispatch(messagePending(id));
+        dispatch(messagePending());
         API.allMessageInThread(id,sessionStorage.getItem('token'))
             .then(success => { 
                 console.log(success);

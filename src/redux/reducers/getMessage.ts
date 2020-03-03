@@ -6,11 +6,11 @@ import {
 
 import {Reducer} from "redux";
 import {MessageState} from "./types/MessageState";
-import {REGISTER_ERROR, REGISTER_PENDING, REGISTER_SUCCESS} from "../actions/sign-up";
+
 
 const  initialState: MessageState = {
     getMessageIsPending: false,
-    threadId: ''
+    allMessage: []
 };
 
 export const messageInThread: Reducer<any, any> = (state= initialState, action) => {
@@ -29,7 +29,7 @@ export const messageInThread: Reducer<any, any> = (state= initialState, action) 
             return {
                 ...state,
                 getMessageIsPending: false,
-                threadId: action.payload.registerUser.registerUser.data
+                allMessage: action.payload.messages
             };
         default:
             return state;

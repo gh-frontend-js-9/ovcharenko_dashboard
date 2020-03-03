@@ -13,7 +13,6 @@ const initialState: LoginState = {
         token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTE5YzIyM2E0MTk5YzAwMjI3NTI2OGEiLCJpYXQiOjE1Nzk2ODc4OTl9.M5q83O_nP6B8SbfNKOs3CaQTu4JaQcbr_MgDLSgqnTU',
         _id: "5e20481cec581500225c4de7"
     },
-    token: ''
 };
 
 export const loginReducer: Reducer<LoginState> = (state = initialState, action) => {
@@ -22,8 +21,7 @@ export const loginReducer: Reducer<LoginState> = (state = initialState, action) 
             return {
                 ...state,
                 isPending: false,
-                user: action.payload.user,
-                token: action.payload.token
+                user: action.payload.user
             };
         case LOGIN_PENDING:
             return {
