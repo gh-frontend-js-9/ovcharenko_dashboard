@@ -119,6 +119,19 @@ class API {
                 console.log('err', error);
             })
     }
+    static getAllUser() {
+        return axios.get(`${BASE_URL}/threads?sort=desc`, {
+            headers: {
+                'x-access-token': sessionStorage.getItem('token'),
+            }
+        })
+            .then(response => {
+                return response.data
+            })
+            .catch(error => {
+                console.log('err', error);
+            })
+    }
 }
 
 export default API
