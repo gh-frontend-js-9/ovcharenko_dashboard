@@ -29,6 +29,7 @@ export const sendMessageError: ActionCreator<Action> = () => {
     };
 };
 
+/*
 export const sendMessage: (id,body)
     => (dispatch: Dispatch)
     => void = (id,body) => {
@@ -43,4 +44,4 @@ export const sendMessage: (id,body)
                 dispatch(sendMessageError(err));
             });
     };
-};
+};*/

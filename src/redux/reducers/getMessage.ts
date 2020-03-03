@@ -1,7 +1,9 @@
 import {
     MESSAGE_ERROR,
     MESSAGE_PENDING,
-    MESSAGE_SUCCESS
+    MESSAGE_SUCCESS,
+    ADD_MESSAGE,
+    SET_CURRENT_THREAD
 } from "../actions/getMessage";
 
 import {Reducer} from "redux";
@@ -10,7 +12,8 @@ import {MessageState} from "./types/MessageState";
 
 const  initialState: MessageState = {
     getMessageIsPending: false,
-    allMessage: []
+    allMessage: [],
+    threadId: ''
 };
 
 export const messageInThread: Reducer<any, any> = (state= initialState, action) => {
@@ -30,6 +33,16 @@ export const messageInThread: Reducer<any, any> = (state= initialState, action) 
                 ...state,
                 getMessageIsPending: false,
                 allMessage: action.payload.messages
+            };
+        case ADD_MESSAGE:
+            return {
+                ...state,
+                allMessage: [...state.allMessage, action.payload.message]
+            };
+        case SET_CURRENT_THREAD:
+            return {
+                ...state,
+                threadId: action.payload.threadId
             };
         default:
             return state;

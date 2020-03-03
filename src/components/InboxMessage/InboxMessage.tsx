@@ -1,15 +1,37 @@
 import React, {Component} from 'react';
 import './InboxMessage.css'
 import {connect} from "react-redux";
-class InboxMessage extends Component<any,any> {
-    render() {
+import {bindActionCreators} from "redux";
+import {sendMessage} from "../../redux/actions/getMessage";
 
+class InboxMessage extends Component<any,any> {
+    constructor(props) {
+        super(props);
+        this.state = {
+            body: ''
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
+
+    handleSubmit(event) {
+        this.props.sendMessage(this.props.threadId,this.state.body);
+        event.preventDefault();
+    }
+    render() {
         return (
             <div className='inbox-message'>
                 <div className='inbox-body-message'>
                     {this.props.allMessage.map(message => {
                        const type = this.props.user._id === message.user._id ?
                            'message-box' : 'message-user-box';
+
                         return (
                             <div className={type} key={message._id}>
                                 {message.body}
@@ -18,7 +40,15 @@ class InboxMessage extends Component<any,any> {
                     })}
                 </div>
                 <div className='enter-message'>
-                    <input type="text" className='input-body' placeholder='Write a message' />
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text"
+                               name='body'
+                               className='input-body'
+                               placeholder='Write a message'
+                               onChange={this.handleChange}
+                        />
+                        <button type='submit'></button>
+                    </form>
                 </div>
             </div>
         );
@@ -28,8 +58,15 @@ class InboxMessage extends Component<any,any> {
 const mapStateToProps = (state) => {
     return {
         allMessage: state.messageInThread.allMessage,
-        user: state.loginReducer.user
+        user: state.loginReducer.user,
+        threadId: state.messageInThread.threadId
     };
 };
 
-export default connect(mapStateToProps)(InboxMessage);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        sendMessage: bindActionCreators(sendMessage, dispatch),
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(InboxMessage);

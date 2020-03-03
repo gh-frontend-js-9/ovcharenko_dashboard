@@ -2,5 +2,6 @@ import {Message} from "../../../models/Message";
 
 export interface MessageState {
     getMessageIsPending: boolean,
-    allMessage: Message[]
+    allMessage: Message[],
+    threadId: string
 }
