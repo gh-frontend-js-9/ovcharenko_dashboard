@@ -5,6 +5,7 @@ import {reset} from "./reset";
 import {postProjectReducer} from "./postProject";
 import {messageInThread} from "./getMessage";
 import {sendMessage} from "./sendMessage";
+import {allUsers} from "./getAllUser";
 
 const rootReducer = combineReducers({
     signUp,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     loginReducer,
     postProjectReducer,
     messageInThread,
-    sendMessage
+    sendMessage,
+    allUsers
 });
 
 export default rootReducer;
