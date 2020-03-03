@@ -7,7 +7,6 @@ import {
 import {Reducer} from "redux";
 import {UsersState} from "./types/UsersState";
 
-
 const initialState: UsersState = {
     getUsersIsPending: false,
     user: []
@@ -29,7 +28,7 @@ export const allUsers: Reducer<any, any> = (state= initialState, action) => {
             return {
                 ...state,
                 getMessageIsPending: false,
-                allMessage: action.payload.messages
+                user: action.payload.users
             };
         default:
             return state;
