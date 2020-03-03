@@ -12,6 +12,7 @@ class InboxThread extends Component<any,any> {
         return (
             <div>
                 <div className='thread-box' onClick={() => {
+                    console.log(threads.users[0].name)
                     API.allMessageInThread(threads._id,sessionStorage.getItem('token'))
                         .then(response => {
                             console.log(response)
