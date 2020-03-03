@@ -100,13 +100,13 @@ class API {
                 console.log('err', error);
             })
     }
-    static sendMessage(id,send_message_body) {
+    static sendMessage(id,body) {
         return axios.post(`${BASE_URL}/threads/messages`,{
              thread: {
                  _id: id,
              },
              message: {
-                body: send_message_body
+                body: body
              }
         })
             .then(response => {
