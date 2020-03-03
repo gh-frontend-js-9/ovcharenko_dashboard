@@ -24,6 +24,7 @@ class InboxMessage extends Component<any,any> {
         this.props.sendMessage(this.props.threadId,this.state.body);
         event.preventDefault();
     }
+
     render() {
         return (
             <div className='inbox-message'>
