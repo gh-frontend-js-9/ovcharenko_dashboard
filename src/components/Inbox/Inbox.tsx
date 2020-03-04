@@ -6,6 +6,7 @@ import InboxInfo from "../InboxInfo/InboxInfo";
 
 import InboxMessage from "../InboxMessage/InboxMessage";
 import InboxThreadList from "../InboxThreadList/InboxThreadList";
+import InboxProfile from "../InboxProfile/InboxProfile";
 
 class Inbox extends Component {
     render() {
@@ -17,6 +18,7 @@ class Inbox extends Component {
                 <div className='message-flex'>
                     <InboxThreadList/>
                     <InboxMessage/>
+                    <InboxProfile/>
                 </div>
             </div>
         );

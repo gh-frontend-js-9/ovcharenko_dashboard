@@ -3,6 +3,7 @@
     width: 45vw;
     height: 90vh;
 }
+
 .message-flex {
     display: flex;
     flex-direction: row;
