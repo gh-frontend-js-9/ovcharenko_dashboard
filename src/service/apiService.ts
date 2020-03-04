@@ -135,6 +135,19 @@ class API {
                 console.log('err', error);
             })
     }
+    static getUserById(user_id) {
+        return axios.get(`${BASE_URL}/users/${user_id}`, {
+            headers: {
+                'x-access-token': sessionStorage.getItem('token'),
+            }
+        })
+            .then(response => {
+            return response.data
+        })
+            .catch(error => {
+                console.log('err', error);
+            })
+    }
 }
 
 export default API
