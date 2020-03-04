@@ -4,17 +4,17 @@ import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {getUserById} from "../../redux/actions/getUserProfile";
 
-class InboxProfile extends Component {
+class InboxProfile extends Component<any,any> {
     render() {
         return (
             <div className='user-info-wrapper'>
                 <div className='user-info'>
                     <div className='user-main-info'>
                         <span className='user-name'>
-                            Lyall Roach
+                           {this.props.user.name}
                         </span>
                         <span className='mg-bottom-15px'>
-                            UX/UI Designer
+                            {this.props.user.position}
                         </span>
                         <span className='mg-bottom-15px'>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, nobis.
@@ -25,25 +25,25 @@ class InboxProfile extends Component {
                             Email
                         </span>
                         <span className='info-info'>
-                            lyallroach@gmail.com
+                            {this.props.user.email}
                         </span>
                         <span className='title-info'>
                             Phone
                         </span>
                         <span className='info-info'>
-                            +48 500 400 300
+                            {this.props.user.phone}
                         </span>
                         <span className='title-info'>
                             Adress
                         </span>
                         <span className='info-info'>
-                            65 Lorem St, Warsaw, PL
+                           {this.props.user.address}
                         </span>
                         <span className='title-info'>
                             Organization
                         </span>
                         <span className='info-info'>
-                            Symu.co
+                           {this.props.user.organization}
                         </span>
                     </div>
                 </div>
@@ -54,13 +54,13 @@ class InboxProfile extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: state.allUsers.users
+        user: state.getUserById.user
     };
 };
 
 const  mapDispatchToProps = (dispatch) => {
     return {
-        userinfo: bindActionCreators(getUserById, dispatch)
+        getUserInfo: bindActionCreators(getUserById, dispatch)
     };
 };
 

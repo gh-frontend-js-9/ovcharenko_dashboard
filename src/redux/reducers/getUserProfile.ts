@@ -18,7 +18,8 @@ export const getUserById: Reducer<GetUserById> = (state= initialState, action) =
         case USER_SUCCESS:
             return {
                 ...state,
-                isPending: action.payload.isPending,
+                isPending: action.payload,
+                user: action.payload.user
             };
         case USER_PENDING:
             return {

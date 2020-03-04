@@ -5,15 +5,19 @@ import API from "../../service/apiService";
 import {bindActionCreators} from "redux";
 import {registrationUser} from "../../redux/actions/sign-up";
 import {getMessage} from "../../redux/actions/getMessage";
+import {getUserById} from "../../redux/actions/getUserProfile";
 
 
 class InboxThread extends Component<any,any> {
+
 
     render() {
         let {threads} = this.props;
         let dateFormat = require('dateformat');
         return (
-            <div>
+            <div onClick={() => {
+                this.props.getUserInfo(threads.users[1]._id)
+            }}>
                 <div className='thread-box' onClick={() => {
                   this.props.getMessage(threads._id)
                 }}>
@@ -48,6 +52,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
      getMessage : bindActionCreators(getMessage, dispatch),
+     getUserInfo: bindActionCreators(getUserById, dispatch)
     }
 };
 
