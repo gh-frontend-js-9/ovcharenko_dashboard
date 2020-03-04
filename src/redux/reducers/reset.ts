@@ -5,7 +5,6 @@ import {
 } from "../actions/reset";
 import {Reducer} from "redux";
 import {ResetState} from "./types/ResetState";
-import {RegisterActions } from "../actions/types/RegistrationAction";
 
 const initialState: ResetState = {
     isPending: false,

@@ -1,5 +1,4 @@
-import {Action, ActionCreator, Dispatch} from "redux";
-import API from "../../service/apiService";
+import {Action, ActionCreator} from "redux";
 
 export const SEND_MESSAGE_PENDING = 'SEND_MESSAGE_PENDING';
 export const SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS';

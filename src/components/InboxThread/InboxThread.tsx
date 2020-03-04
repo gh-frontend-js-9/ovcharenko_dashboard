@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import './InboxThread.css'
 import {connect} from "react-redux";
-import API from "../../service/apiService";
 import {bindActionCreators} from "redux";
-import {registrationUser} from "../../redux/actions/sign-up";
 import {getMessage} from "../../redux/actions/getMessage";
 import {getUserById} from "../../redux/actions/getUserProfile";
 

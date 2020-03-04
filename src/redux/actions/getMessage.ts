@@ -1,6 +1,6 @@
 import {Action, ActionCreator, Dispatch} from "redux";
 import API from "../../service/apiService";
-import {sendMessageError, sendMessagePending, sendMessageSuccess} from "./sendMessage";
+import {sendMessageError} from "./sendMessage";
 
 export const MESSAGE_PENDING = 'MESSAGE_PENDING';
 export const MESSAGE_SUCCESS = 'MESSAGE_SUCCESS';

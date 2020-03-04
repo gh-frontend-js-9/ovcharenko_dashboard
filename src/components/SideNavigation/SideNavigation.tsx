@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './SideNavigation.css'
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SideNavigation extends Component {
     render() {
