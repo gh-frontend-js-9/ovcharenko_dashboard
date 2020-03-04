@@ -1,32 +1,26 @@
 import React, {Component} from 'react';
 import './UsersList.css'
 import {bindActionCreators} from "redux";
-import {sendMessage} from "../../redux/actions/getMessage";
 import {connect} from "react-redux";
+import {postThread} from "../../redux/actions/postThread";
 
 class UsersList extends Component<any,any> {
     render() {
         let {user} = this.props;
         return (
-            <div className='user-body'>
-                {user}
+            <div className='user-body'
+                 onClick={this.props.postThread(user._id)}
+            >
+                {user.name}
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        allMessage: state.messageInThread.allMessage,
-        user: state.loginReducer.user,
-        threadId: state.messageInThread.threadId
-    };
-};
-
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendMessage: bindActionCreators(sendMessage, dispatch),
+        postThread: bindActionCreators(postThread, dispatch),
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(UsersList);
+export default connect(null,mapDispatchToProps)(UsersList);

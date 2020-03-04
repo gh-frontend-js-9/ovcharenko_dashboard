@@ -43,7 +43,7 @@ class ConvButton extends Component<any,any> {
                             >
                                 {this.props.users.map(user => {
                                     return (
-                                        <UsersList user={user.name} key={user._id}/>
+                                        <UsersList user={user} key={user._id}/>
                                     )
                                 })}
                             </div>
