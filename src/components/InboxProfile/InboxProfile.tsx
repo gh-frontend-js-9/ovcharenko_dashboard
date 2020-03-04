@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './InboxProfile.css'
 import {bindActionCreators} from "redux";
-import {getUsers} from "../../redux/actions/getAllUser";
 import {connect} from "react-redux";
 import {getUserById} from "../../redux/actions/getUserProfile";
 
@@ -53,10 +52,16 @@ class InboxProfile extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        users: state.allUsers.users
+    };
+};
+
 const  mapDispatchToProps = (dispatch) => {
     return {
         userinfo: bindActionCreators(getUserById, dispatch)
     };
 };
 
-export default connect(null, mapDispatchToProps)(InboxProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(InboxProfile);
