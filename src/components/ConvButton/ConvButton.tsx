@@ -4,6 +4,7 @@ import {bindActionCreators} from "redux";
 
 import {connect} from "react-redux";
 import {getUsers} from "../../redux/actions/getAllUser";
+import UsersList from "../UsersList/UsersList";
 
 class ConvButton extends Component<any,any> {
     constructor(props) {
@@ -40,11 +41,9 @@ class ConvButton extends Component<any,any> {
                             <div className='modal-body'
                                  onClick={() => this.setState({isUsersOpen:false})}
                             >
-                                {this.props.users.map(users => {
+                                {this.props.users.map(user => {
                                     return (
-                                        <div key={users._id} className='user-name'>
-                                            {users.name}
-                                        </div>
+                                        <UsersList user={user.name} key={user._id}/>
                                     )
                                 })}
                             </div>
