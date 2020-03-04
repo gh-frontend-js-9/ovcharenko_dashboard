@@ -122,7 +122,7 @@ class API {
                 console.log('err', error);
             })
     }
-    static getAllUser() {
+    static async getAllUser() {
         return axios.get(`${BASE_URL}/users/all`, {
             headers: {
                 'x-access-token': sessionStorage.getItem('token'),
