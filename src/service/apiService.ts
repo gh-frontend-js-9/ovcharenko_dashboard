@@ -66,9 +66,8 @@ class API {
     static createThread(user_id) {
         return axios.post(`${BASE_URL}/threads`,user_id)
             .then(response => {
-                return {
-                    thread: response
-                }
+                return response.data
+
             })
             .catch(error => {
                 console.log('thread err', error);
@@ -120,7 +119,7 @@ class API {
             })
     }
     static getAllUser() {
-        return axios.get(`${BASE_URL}/threads?sort=desc`, {
+        return axios.get(`${BASE_URL}/users/all`, {
             headers: {
                 'x-access-token': sessionStorage.getItem('token'),
             }

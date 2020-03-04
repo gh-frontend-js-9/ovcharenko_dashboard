@@ -1,0 +1,46 @@
+.box-new-convers {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-conv-button {
+    height: 50px;
+    width: 25vw;
+    border-radius: 7px;
+    background-color: #2196f3;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.24px;
+}
+
+.new-conv-button:hover {
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 451px;
+    border-radius: 5px;
+    background: #2f3242;
+    height: 442px;
+    padding: 15px 0px;
+    color: white;
+    overflow: scroll;
+}

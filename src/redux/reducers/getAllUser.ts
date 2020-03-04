@@ -9,7 +9,7 @@ import {UsersState} from "./types/UsersState";
 
 const initialState: UsersState = {
     getUsersIsPending: false,
-    user: []
+    users: []
 };
 
 export const allUsers: Reducer<any, any> = (state= initialState, action) => {
@@ -17,18 +17,18 @@ export const allUsers: Reducer<any, any> = (state= initialState, action) => {
         case USER_PENDING:
             return {
                 ...state,
-                getMessageIsPending: action.payload
+                getUsersIsPending: action.payload
             };
         case USER_ERROR:
             return {
                 ...state,
-                getMessageIsPending: action.payload
+                getUsersIsPending: action.payload
             };
         case USER_SUCCESS:
             return {
                 ...state,
-                getMessageIsPending: false,
-                user: action.payload.users
+                getUsersIsPending: false,
+                users: action.payload.users
             };
         default:
             return state;

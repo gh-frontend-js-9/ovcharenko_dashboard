@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import API from "../../service/apiService";
 import InboxThread from "../InboxThread/InboxThread";
+import ConvButton from "../ConvButton/ConvButton";
 
 class InboxThreadList extends Component<any,any> {
     constructor(props) {
@@ -34,11 +35,12 @@ class InboxThreadList extends Component<any,any> {
                     )
                 })}
                 </div>
-                <div className='box-new-convers'>
+                    <ConvButton/>
+                {/*<div className='box-new-convers'>
                     <button className='new-conv-button'>
                         + New coversation
                     </button>
-                </div>
+                </div>*/}
                 </div>
             </div>
 
