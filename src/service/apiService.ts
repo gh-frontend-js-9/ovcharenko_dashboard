@@ -64,7 +64,11 @@ class API {
             })
     }
     static createThread(user_id) {
-        return axios.post(`${BASE_URL}/threads`,user_id)
+        return axios.post(`${BASE_URL}/threads`,{
+            user:{
+                _id: user_id
+            }
+        })
             .then(response => {
                 return response.data
 
