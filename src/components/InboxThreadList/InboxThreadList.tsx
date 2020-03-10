@@ -14,6 +14,7 @@ class InboxThreadList extends Component<any,any> {
     updateTreads = () => {
         API.getAllThread(sessionStorage.getItem('token'))
             .then((response) => {
+                console.log(response);
                 this.setState({
                     threads: response,
                 })

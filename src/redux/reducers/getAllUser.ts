@@ -28,7 +28,7 @@ export const allUsers: Reducer<any, any> = (state= initialState, action) => {
             return {
                 ...state,
                 getUsersIsPending: false,
-                users: action.payload.users
+                user: action.payload.users
             };
         default:
             return state;

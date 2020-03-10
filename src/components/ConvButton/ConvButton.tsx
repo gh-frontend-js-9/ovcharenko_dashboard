@@ -15,7 +15,7 @@ class ConvButton extends Component<any,any> {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(){
+  handleClick(){
        this.props.getUsers();
        this.setState({isUsersOpen:true});
     }
@@ -23,7 +23,6 @@ class ConvButton extends Component<any,any> {
 
     render() {
 
-        const {} = this.state;
         return (
             <div>
                 <div className='box-new-convers'>
@@ -34,9 +33,7 @@ class ConvButton extends Component<any,any> {
                         + New conversation
                     </button>
                 </div>
-
                 {this.state.isUsersOpen && (
-
                         <div className='modal'>
                             <div className='modal-body'
                                  onClick={() => this.setState({isUsersOpen:false})}
@@ -48,7 +45,6 @@ class ConvButton extends Component<any,any> {
                                 })}
                             </div>
                         </div>
-
                 )}
             </div>
         );

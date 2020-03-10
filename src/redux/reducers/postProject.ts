@@ -10,7 +10,7 @@ import {Reducer} from "redux";
 
 const initialState: postProjectState = {
     isPending: false
-}
+};
 
 export const postProjectReducer: Reducer<postProjectState> = (state= initialState, action) => {
     switch (action.type) {

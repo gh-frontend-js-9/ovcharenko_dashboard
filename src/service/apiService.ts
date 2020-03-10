@@ -123,7 +123,7 @@ class API {
             })
     }
     static async getAllUser() {
-        return axios.get(`${BASE_URL}/users/all`, {
+        return await axios.get(`${BASE_URL}/users/all`, {
             headers: {
                 'x-access-token': sessionStorage.getItem('token'),
             }

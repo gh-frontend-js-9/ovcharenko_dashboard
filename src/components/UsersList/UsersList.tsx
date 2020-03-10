@@ -12,6 +12,7 @@ class UsersList extends Component<any,any> {
                  onClick={this.props.postThread(user._id)}
             >
                 {user.name}
+                {console.log(user.name)}
             </div>
         );
     }
