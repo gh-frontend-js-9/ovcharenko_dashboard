@@ -6,6 +6,7 @@ import LoginForm from "../LoginForm/LoginForm";
 import './Navigation.css';
 import ProjectDashboard from "../ProjectDashboard/ProjectDashboard";
 import Inbox from "../Inbox/Inbox";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 class Navigation extends Component {
     render() {
@@ -24,12 +25,12 @@ class Navigation extends Component {
                     <Route path={'/reset'}>
                         <ResetForm/>
                     </Route>
-                    <Route path={'/dashboard'}>
+                    <ProtectedRoute path={'/dashboard'}>
                         <ProjectDashboard/>
-                    </Route>
-                    <Route path={'/inbox'}>
+                    </ProtectedRoute>
+                    <ProtectedRoute path={'/inbox'}>
                         <Inbox/>
-                    </Route>
+                    </ProtectedRoute>
                     <Route path={'/'}>
                         <Redirect to={'log-in'}/>
                     </Route>
