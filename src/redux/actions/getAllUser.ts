@@ -1,20 +1,20 @@
 import {Action, ActionCreator, Dispatch} from "redux";
 import API from "../../service/apiService";
 
-export const USER_PENDING = 'USER_PENDING';
-export const USER_SUCCESS = 'USER_SUCCESS';
-export const USER_ERROR = 'USER_ERROR';
+export const ALL_USER_PENDING = 'ALL_USER_PENDING';
+export const ALL_USER_SUCCESS = 'ALL_USER_SUCCESS';
+export const ALL_USER_ERROR = 'ALL_USER_ERROR';
 
 export const getUserPending: ActionCreator<Action> = () => {
     return {
-        type: USER_PENDING,
+        type: ALL_USER_PENDING,
         payload: true
     };
 };
 
 export const getUserSuccess: ActionCreator<Action> = (users) => {
     return {
-        type: USER_SUCCESS,
+        type: ALL_USER_SUCCESS,
         payload: {
             users: users,
         }
@@ -23,7 +23,7 @@ export const getUserSuccess: ActionCreator<Action> = (users) => {
 
 export const getUserError: ActionCreator<Action> = () => {
     return {
-        type: USER_ERROR,
+        type: ALL_USER_ERROR,
         payload: false,
     };
 };

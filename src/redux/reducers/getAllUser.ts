@@ -1,7 +1,7 @@
 import {
-    USER_ERROR,
-    USER_PENDING,
-    USER_SUCCESS
+    ALL_USER_ERROR,
+    ALL_USER_PENDING,
+    ALL_USER_SUCCESS
 } from "../actions/getAllUser";
 
 import {Reducer} from "redux";
@@ -14,21 +14,21 @@ const initialState: UsersState = {
 
 export const allUsers: Reducer<any, any> = (state= initialState, action) => {
     switch (action.type) {
-        case USER_PENDING:
+        case ALL_USER_PENDING:
             return {
                 ...state,
                 getUsersIsPending: action.payload
             };
-        case USER_ERROR:
+        case ALL_USER_ERROR:
             return {
                 ...state,
                 getUsersIsPending: action.payload
             };
-        case USER_SUCCESS:
+        case ALL_USER_SUCCESS:
             return {
                 ...state,
                 getUsersIsPending: false,
-                user: action.payload.users
+                users: action.payload.users
             };
         default:
             return state;
